@@ -106,23 +106,7 @@ h3 {
     color:#007185;
 }
 
-@media only screen and (max-width: 600px) {
-    .shop-section{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .box{
-        width: 60%;
-       /* margin-left: 35px;
-        margin-right: 25px;*/
-        height: 400px;
-       /* display: flex;
-        flex-direction: row;*/
-        align-items: center;
 
-
-    }
 
     .hero-msg{
         background-color: white;
@@ -244,7 +228,7 @@ h3 {
 
 }
 
-@media only screen and (max-width: 500px) and (min-width: 250px) 
+@media only screen and (max-width: 600px) and (min-width: 500px) 
  {
 
     .shop-section{
@@ -303,6 +287,52 @@ h3 {
     
 
 }
+
+@media only screen and (max-width: 500px) and (min-width: 400px)  {
+    .shop-section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .box{
+        width: 80%;
+       /* margin-left: 35px;
+        margin-right: 25px;*/
+        height: 450px;
+       /* display: flex;
+        flex-direction: row;*/
+        align-items: center;
+
+
+    }
+
+    .hero-msg{
+        background-color: white;
+        color:black;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.7rem;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .hero-msg p{
+        padding-top: 15px;
+    }
+    .img-1{
+        height: 280px;
+        width: 280px;
+    }
+    .box-con{
+        padding-left: 20px;
+    }
+}
+
+
+
+
+
 
 
 
