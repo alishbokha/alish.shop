@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="C:\bootstrap-4.0.0\bootstrap-4.0.0\dist\css\bootstrap.min.css">
+   
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        h1{
+            text-align: center;
+            margin-top: 20px;
+        }
+        footer{
+            width: 100%;
+            position: absolute;
+            bottom: 0px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">Alish.Shop</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item " >
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="item.html">Store</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="three.html">Cart</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <h1>Checkout</h1>
+    
+    <div id="cart">
+       
+        <div class="container">
+            <table id="cartTable">
+                <tr>
+                    <th>#</th>
+                    <th>Item Name</th>
+                    <th>Item Total</th>
+                </tr>
+                <!-- Display cart details from query parameters -->
+                <!-- JavaScript will add the total row here -->
+            </table>
+        </div>
+    </div>
+   
+  
+    
+
+  
+    
+        
+
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2023 My Website. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    
+
+    <script>
+        const queryParams = new URLSearchParams(window.location.search);
+        const cartTable = document.getElementById("cartTable");
+        let grandTotal = 0;
+
+        function displayCart() {
+            let rowNum = 1;
+            for (const param of queryParams) {
+                if (param[0] !== 'total') {
+                    const row = cartTable.insertRow(-1);
+                    const cell1 = row.insertCell(0);
+                    const cell2 = row.insertCell(1);
+                    const cell3 = row.insertCell(2);
+                    
+                    cell1.textContent = rowNum;
+                    cell2.textContent = param[0];
+                    cell3.textContent = param[1];
+                    
+                    grandTotal += parseInt(param[1]);
+                    rowNum++;
+                }
+            }
+            
+            // Add total row at the end of the table
+            const totalRow = cartTable.insertRow();
+            const emptyCell = totalRow.insertCell(0);
+            emptyCell.colSpan = 2; // Span two columns for Item Name and Item Total
+            emptyCell.textContent = "Total";
+            const totalCell = totalRow.insertCell(1);
+            totalCell.textContent = `${grandTotal}`;
+        }
+
+        displayCart();
+    </script>
+</body>
+</html>
