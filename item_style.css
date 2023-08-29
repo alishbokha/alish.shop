@@ -431,9 +431,9 @@ footer{
         height: 180px;
         background-size: cover;
         border-radius: 20px;
-        margin-left: 30px;
+        margin-left: 50px;
         margin-top: 20px;
-        margin-right: 30px;
+        margin-right: 50px;
     }
 
     button
@@ -443,3 +443,35 @@ footer{
     }
     
 }
+
+@media only screen and (min-width: 1500px)  {
+
+    .box{
+        height: 450px;
+    
+       background-size: cover;
+      /* object-fit: cover;*/
+        background-color: rgb(245, 238, 241);
+        border-radius: 20px;
+        margin-top: 20px;
+        
+    
+    }
+
+    .img-1{
+        height: 250px;
+        background-size: cover;
+        border-radius: 20px;
+        margin-left: 70px;
+        margin-top: 20px;
+        margin-right: 70px;
+    }
+
+    button
+    {
+        margin-top: 20px;
+        margin-left: 100px;
+    }
+    
+}
+
